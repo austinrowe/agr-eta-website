@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="claude:viewport-fit-sides" content="cover"><title>The House | Eta Chapter AGR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>html{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}
+/* Layout: plain and light. Clean hero photo, one big paragraph of facts, photo + text sections, light recruitment band. Light only, on purpose. */
+:root{
+  --bg:#ffffff; --fg:#1d221e; --muted:#555f57; --line:#dde3dc; --tint:#e6efe4;
+  --green:#1e6b3b; --green-ink:#17512d; --gold:#e2b93b;
+  --head:'Barlow Condensed','Arial Narrow',sans-serif; --sans:'Source Sans 3',system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:18px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2{font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;text-wrap:balance;margin:0;color:var(--green-ink)}
+h2{font-size:clamp(34px,5vw,48px)}
+p{margin:0}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.full{margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)))}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.brand{display:block;line-height:0}
+.logo{height:60px;width:auto}
+.brand{font-family:var(--head);font-weight:700;font-size:24px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;line-height:1.05;color:var(--green-ink)}
+.brand small{display:block;font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:0;text-transform:none;color:var(--muted)}
+nav.links{display:none;gap:28px;align-items:center;font-size:16px;font-weight:600}
+nav.links a{text-decoration:none}
+nav.links a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--gold);text-decoration-thickness:3px}
+nav.links a.give{background:var(--green);color:#fff;padding:8px 18px;border-radius:2px}
+.menu-btn{background:none;border:1px solid var(--line);color:inherit;font:inherit;font-size:16px;padding:6px 14px;border-radius:2px;cursor:pointer}
+.panel{max-width:1040px;margin:0 auto;padding-bottom:12px}
+.panel a{display:block;padding:12px 0;text-decoration:none;border-top:1px solid var(--line);font-weight:600}
+@media(min-width:820px){nav.links{display:flex}.menu-btn{display:none}.panel{display:none}}
+
+.btn{display:inline-block;background:var(--green);color:#fff;font-weight:700;text-decoration:none;padding:14px 26px;border-radius:2px;border-bottom:4px solid var(--gold)}
+.btn:hover{background:var(--green-ink)}
+
+/* hero: photo with nothing on top of it */
+.hero{height:clamp(300px,52vw,560px);background:var(--tint)}
+.hero img{object-position:50% 38%}
+.hero-text{padding-block:36px 8px;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-end}
+.hero-text h1{font-size:clamp(48px,9vw,96px)}
+.hero-text p{color:var(--muted);margin-top:8px}
+
+/* the facts, as a paragraph */
+.facts{font-size:clamp(23px,3.4vw,34px);line-height:1.38;font-weight:500;max-width:34em;padding-block:48px 24px}
+.facts b{color:var(--green);font-weight:700}
+
+section{padding-block:48px}
+.split{display:grid;gap:28px;grid-template-columns:1fr;align-items:center}
+@media(min-width:820px){.split{grid-template-columns:1fr 1fr;gap:56px}.split.flip .pic{order:2}}
+.pic{aspect-ratio:4/3;overflow:hidden;background:var(--tint)}
+.copy-col h2{margin-bottom:14px}
+.copy-col p{max-width:48ch}
+.copy-col p+p{margin-top:14px}
+.textlink{display:inline-block;margin-top:18px;font-weight:700;color:var(--green-ink);text-underline-offset:5px;text-decoration-color:var(--gold);text-decoration-thickness:3px;margin-right:22px}
+.pair{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.pair .pic{aspect-ratio:3/4}
+.pair .pic:last-child img{object-position:50% 64%}
+
+.band{height:clamp(220px,36vw,420px);background:var(--tint);margin-top:16px}
+.band img{object-position:50% 40%}
+.cap{font-size:15px;color:var(--muted);padding-top:10px}
+
+.rec{background:var(--tint);padding:56px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px));margin-top:48px}
+.rec .wrap{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between}
+.rec h2{max-width:14ch}
+.rec p{margin-top:10px;max-width:46ch}
+
+.crest{width:56px;height:auto;flex:none}
+.affil{display:flex;flex-wrap:wrap;gap:20px 36px;align-items:center;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+.affil a{display:block;line-height:0}
+.affil img{width:auto;height:48px}
+.affil img.isu{height:32px}
+.affil img.ms{margin-left:auto;height:40px}
+.id{display:flex;gap:16px;align-items:center}
+footer{padding-block:40px 48px;font-size:16px;color:var(--muted)}
+footer .row{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center}
+footer a{text-decoration:none;margin-right:20px;display:inline-block;padding:2px 0;font-weight:600;color:var(--green-ink)}
+footer a:hover{text-decoration:underline}
+footer b{color:var(--fg)}
+
+/* inner pages */
+html{scroll-padding-top:96px}
+h3{font-family:var(--head);font-weight:700;font-size:28px;text-transform:uppercase;letter-spacing:.02em;line-height:1.1;color:var(--green-ink);margin:0}
+nav.links a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--gold);text-decoration-thickness:3px}
+.pagehead{padding-block:56px 8px}
+.pagehead h1{font-size:clamp(52px,10vw,92px)}
+.pagehead p{font-size:clamp(19px,2.6vw,24px);max-width:34em;margin-top:14px;color:var(--muted)}
+.prose{max-width:62ch}
+.prose p+p{margin-top:14px}
+.cols{display:grid;gap:32px 48px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:28px}
+.cols>div{border-top:3px solid var(--green);padding-top:14px;min-width:0}
+.cols h3{margin-bottom:8px}
+.cols p{max-width:44ch}
+.cols p+p{margin-top:10px}
+.specs{margin:0;padding:0;list-style:none;border-top:3px solid var(--green)}
+.specs li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line)}
+.specs li span:first-child{color:var(--muted)}
+.specs b{text-align:right;font-weight:600}
+details.faq{border-top:1px solid var(--line)}
+details.faq:last-of-type{border-bottom:1px solid var(--line)}
+details.faq summary{cursor:pointer;font-weight:700;padding:16px 36px 16px 0;list-style:none;position:relative}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";position:absolute;right:6px;top:10px;font-size:26px;color:var(--green);font-weight:400}
+details.faq[open] summary::after{content:"\2013"}
+details.faq .ans{padding:0 0 18px;max-width:60ch}
+.tablewrap{overflow-x:auto;border-top:3px solid var(--green);margin-top:24px}
+table.cmp{border-collapse:collapse;width:100%;min-width:600px;font-size:17px}
+table.cmp th{text-align:left;font-family:var(--head);text-transform:uppercase;letter-spacing:.04em;font-size:19px;padding:12px 18px 12px 0;border-bottom:2px solid var(--fg)}
+table.cmp td{padding:14px 18px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.yes{color:var(--green-ink);font-weight:700}
+.no{color:var(--muted);font-weight:600}
+.roster{display:grid;gap:0 40px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:24px}
+.roster div{padding:14px 0;border-top:1px solid var(--line)}
+.roster b{display:block}
+.roster span{color:var(--muted);font-size:16px;line-height:1.4;display:block}
+.todo{background:#fff1c2;border-bottom:2px dashed #a37400;padding:0 4px;color:#4a3500}
+.ph{background:var(--tint);color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:15px;aspect-ratio:4/3}
+.gallery{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:24px}
+.award{padding:14px 0;border-top:1px solid var(--line)}
+.award b{display:block}
+.award span{color:var(--muted);font-size:16px}
+.biglink{font-size:20px}
+.mt{margin-top:24px}
+.sitelinks{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.sitelinks a{margin:0}
+nav.links a.hub{border:2px solid var(--green);padding:6px 14px;border-radius:2px;color:var(--green-ink)}
+@media(max-width:1010px){nav.links{gap:16px}}
+.updates{list-style:none;margin:20px 0 0;padding:0;border-top:3px solid var(--green)}
+.updates li{display:grid;grid-template-columns:130px 1fr;gap:6px 24px;padding:16px 0;border-bottom:1px solid var(--line)}
+.updates .when{color:var(--muted);font-size:16px}
+.updates p{margin-top:4px;max-width:58ch}
+@media(max-width:560px){.updates li{grid-template-columns:1fr}}
+nav.links a.hub:hover{background:var(--tint);text-decoration:none}
+.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:6px 20px;padding:4px 0 18px}
+
+/* native forms: interest, recommend, contact update, pledge */
+.form{display:grid;gap:14px;max-width:46em;margin-top:20px}
+.form .row2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:560px){.form .row2{grid-template-columns:1fr}}
+.form label{display:block;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:4px}
+.form input,.form select,.form textarea{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:2px;background:#fff;color:var(--fg)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:3px solid var(--gold);outline-offset:1px}
+.form textarea{resize:vertical;min-height:80px}
+.form button{justify-self:start;border:none;cursor:pointer;font:inherit}
+.form button:disabled{opacity:.6;cursor:default}
+.hp-wrap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-msg{font-size:15px;margin-top:-4px;min-height:1.2em}
+.form-msg.ok{color:var(--green-ink);font-weight:600}
+.form-msg.err{color:#9b2c2c;font-weight:600}
+.form small.hint{display:block;color:var(--muted);font-size:14px;margin-top:-6px}
+</style></head><body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html"><img class="logo" src="img/logo.jpg" alt="Alpha Gamma Rho, Eta Chapter, Iowa State. Home"></a>
+    <nav class="links" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="house.html" aria-current="page">The House</a>
+      <a href="join.html">Join</a>
+      <a href="alumni.html">Alumni</a>
+      <a class="hub" href="https://agr-chapter-app.vercel.app/" target="_blank" rel="noopener">Member &amp; Alumni Sign-in</a>
+      <a class="give" href="alumni.html#give">Give</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="panel">Menu</button>
+  </div>
+  <div class="panel" id="panel" hidden>
+    <a href="about.html">About</a>
+    <a href="house.html">The House</a>
+    <a href="join.html">Join</a>
+    <a href="alumni.html">Alumni</a>
+    <a href="https://agr-chapter-app.vercel.app/" target="_blank" rel="noopener">Member &amp; Alumni Sign-in</a>
+    <a href="alumni.html#give">Give</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap"><div class="pagehead"><h1>The house</h1><p>201 Gray Avenue, Ames. About a ten-minute walk from most classrooms.</p></div></div>
+<div class="wrap">
+  <section>
+    <div class="split">
+      <div class="pic"><img src="img/aerial.jpg" alt="Aerial view of the Eta Chapter house at 201 Gray Avenue at sunset"></div>
+      <ul class="specs">
+        <li><span>Address</span><b>201 Gray Avenue, Ames, Iowa 50014</b></li>
+        <li><span>Men living in the house</span><b>90</b></li>
+        <li><span>Walk to most classrooms</span><b>About ten minutes</b></li>
+        <li><span>Second Century Addition finished</span><b>Spring 2018</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="prose">
+      <h2 style="margin-bottom:14px">The Second Century Addition</h2>
+      <p>In spring 2018 we finished an addition to the house. It gave us a chapter room, a boardroom, a formal living room and three study rooms.</p>
+    </div>
+    <div class="gallery">
+      <div class="ph"><span class="todo">[Photo: chapter room]</span></div>
+      <div class="ph"><span class="todo">[Photo: boardroom]</span></div>
+      <div class="ph"><span class="todo">[Photo: formal living room]</span></div>
+      <div class="ph"><span class="todo">[Photo: study room]</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="band full"><img src="img/balcony.jpg" alt="Members lined up along the balcony at the back of the house"></div>
+
+<div class="wrap">
+  <section>
+    <div class="split">
+      <div class="copy-col">
+        <h2>Take a tour</h2>
+        <p>The best way to see the house is to walk through it. We are always willing to give a tour and meet a possible new member. Fill out the interest form and an officer will set one up.</p>
+        <a class="textlink" href="https://www.youtube.com/watch?v=sPIpfE3-X80" target="_blank" rel="noopener">Watch the house tour video</a>
+      </div>
+      <div class="pic"><img src="img/drone.jpg" alt="Chapter members in the dining room"></div>
+    </div>
+  </section>
+</div>
+<div class="rec full">
+    <div class="wrap">
+      <div><h2>Come see it in person</h2><p>Fill out the interest form and an officer will get back to you.</p></div>
+      <a class="btn" href="join.html#apply">Interest form</a>
+    </div>
+  </div>
+</main>
+
+<footer class="full" style="padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))">
+  <div class="wrap">
+    <div class="row">
+      <div class="id"><img class="crest" src="img/crest.png" alt="Alpha Gamma Rho coat of arms"><div><b>Alpha Gamma Rho, Eta Chapter</b><br>201 Gray Avenue, Ames, Iowa 50014</div></div>
+      <div>
+        <a href="https://www.instagram.com/alphagammarho_isu/">Instagram</a>
+        <a href="https://www.facebook.com/pages/Alpha-Gamma-Rho-Eta-Chapter/271023109582476">Facebook</a>
+        <a href="https://agr-chapter-app.vercel.app/">Member &amp; Alumni Sign-in</a>
+        <a href="https://alphagammarho.org/">AGR National</a>
+        <a href="http://www.iastate.edu/">Iowa State</a>
+      </div>
+    </div>
+    <div class="sitelinks">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="house.html">The House</a><a href="join.html">Join</a><a href="alumni.html">Alumni</a><a href="alumni.html#give">Give</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('menuBtn'),p=document.getElementById('panel');
+  if(!b||!p)return;
+  b.addEventListener('click',function(){var o=p.hidden;p.hidden=!o;b.setAttribute('aria-expanded',String(o));});
+  p.addEventListener('click',function(e){if(e.target.tagName==='A'){p.hidden=true;b.setAttribute('aria-expanded','false');}});
+})();
+</script>
+<script src="app.js" defer></script>
+</body></html>
