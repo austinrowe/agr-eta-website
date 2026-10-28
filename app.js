@@ -128,6 +128,48 @@
     "Thank you — someone from the alumni board will follow up."
   );
 
+  // Floating "Suggest a change" button, on every page. Opens a small modal
+  // with one textarea; whatever page you're on is sent along automatically.
+  (function () {
+    var openBtn = document.getElementById("fbOpen");
+    var overlay = document.getElementById("fbOverlay");
+    var closeBtn = document.getElementById("fbClose");
+    if (!openBtn || !overlay || !closeBtn) return;
+
+    function pageLabel() {
+      var t = document.title.split("|")[0].trim();
+      return t && t !== "Eta Chapter AGR" ? t : "Home";
+    }
+
+    function open() {
+      overlay.hidden = false;
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+    function close() {
+      overlay.hidden = true;
+      document.body.style.overflow = "";
+      openBtn.focus();
+    }
+    openBtn.addEventListener("click", open);
+    closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !overlay.hidden) close();
+    });
+
+    wireForm(
+      "feedback-form",
+      "submit_copy_feedback",
+      function (d) {
+        return { p_page: pageLabel(), p_note: val(d, "note"), p_hp: val(d, "hp") };
+      },
+      "Thanks — this has been added to our list."
+    );
+  })();
+
   // Live "what's new" on the homepage. Leaves the page's own built-in list
   // alone if the fetch fails or nothing is published yet.
   var list = document.getElementById("updates-list");
